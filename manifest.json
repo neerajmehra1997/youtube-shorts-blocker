@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Shorts Blocker",
+  "version": "1.0",
+  "description": "Blocks YouTube Shorts from appearing on YouTube.",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://m.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "ad-blocker.png",
+    "128": "ad-blocker.png"
+  }
+}

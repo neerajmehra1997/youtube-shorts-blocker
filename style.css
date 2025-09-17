@@ -1,0 +1,4 @@
+/* Hide Shorts visually */
+ytd-reel-shelf-renderer, ytm-shorts-lockup-view-model-v2, a[href*="/shorts/"], ytd-reel-player-renderer {
+    display: none !important;
+}
