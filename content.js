@@ -1,8 +1,9 @@
 let shortsKeywords = [
-    'ytd-reel-shelf-renderer',
-    'ytm-shorts-lockup-view-model-v2',
-    'a[href*="/shorts/"]',
-    'ytd-reel-player-renderer'
+    'ytd-reel-shelf-renderer', // Shorts shelf on the homepage and elsewhere
+    'ytm-shorts-lockup-view-model-v2', // Shorts in YouTube Music
+    'a[href*="/shorts/"]', // Any link to a Shorts video
+    'ytd-reel-player-renderer', // Shorts video player
+    'a[title="Shorts"]' // Sidebar Shorts link
 ]
 
 function removeShorts() {
