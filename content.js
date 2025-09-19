@@ -24,7 +24,7 @@ function removeDivsContainingShorts() {
     shortsSections.forEach((section) => {
         const heading = section.querySelector('span, h2, yt-formatted-string'); // Grab text from common heading elements
 
-        if (heading && heading.textContent.trim().toLowerCase() == 'shorts') {
+        if (heading && heading.textContent.trim().toLowerCase() === 'shorts') {
             console.log("Removed shorts sections")
             section.remove();
         }
