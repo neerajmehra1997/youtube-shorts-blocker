@@ -1,3 +1,4 @@
+const YOUTUBE = 'https://www.youtube.com/';
 let shortsKeywords = [
     'ytd-reel-shelf-renderer', // Shorts shelf on the homepage and elsewhere
     'ytm-shorts-lockup-view-model-v2', // Shorts in YouTube Music
@@ -15,7 +16,7 @@ function removeShorts() {
     // If user is on the Shorts dedicated page, redirect them to home
     if (window.location.pathname.startsWith("/shorts")) {
         console.log("Redirecting from Shorts page to Home...");
-        window.location.href = "https://www.youtube.com/";
+        window.location.href = YOUTUBE;
     }
 }
 
