@@ -19,11 +19,27 @@ function removeShorts() {
     }
 }
 
+function removeDivsContainingShorts() {
+    const shortsSections = document.querySelectorAll('ytd-rich-shelf-renderer');
+    shortsSections.forEach((section) => {
+        const heading = section.querySelector('span, h2, yt-formatted-string'); // Grab text from common heading elements
+
+        if (heading && heading.textContent.trim().toLowerCase() == 'shorts') {
+            console.log("Removed shorts sections")
+            section.remove();
+        }
+    })
+}
+
 // Run once when the page first loads
 removeShorts();
+removeDivsContainingShorts();
 
 // Keep watching for dynamically loaded content
-const observer = new MutationObserver(removeShorts);
+const observer = new MutationObserver(() => {
+    removeDivsContainingShorts();
+    removeShorts();
+});
 observer.observe(document.body, {
     childList: true,
     subtree: true
