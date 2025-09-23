@@ -31,15 +31,33 @@ function removeDivsContainingShorts() {
         }
     })
 }
+function removeShortsIcon() {
+    const shortsSpans = document.querySelectorAll('span');
+    shortsSpans.forEach((span) => {
+        if (span.textContent.trim().toLowerCase() === 'shorts') {
+            let parent = span.closest('ytd-item-section-renderer, ytd-guide-entry-renderer, ytd-guide-section-renderer, ytd-guide-collapsible-entry-renderer');
+
+            if (parent) {
+                parent.remove();
+                console.log('Removed Shorts section:', parent);
+            } else {
+                span.remove();
+                console.log('Removed Shorts span:', span);
+            }
+        }
+    })
+}
 
 // Run once when the page first loads
 removeShorts();
+removeShortsIcon()
 removeDivsContainingShorts();
 
 // Keep watching for dynamically loaded content
 const observer = new MutationObserver(() => {
     removeDivsContainingShorts();
     removeShorts();
+    removeShortsIcon()
 });
 observer.observe(document.body, {
     childList: true,
